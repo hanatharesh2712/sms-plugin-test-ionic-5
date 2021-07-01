@@ -9,9 +9,37 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
+      <ion-title size="large">Get App Hash and recieve SMS in App</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <ion-card>
+    <ion-card-content>
+      <h1>To read SMS which you send,
+        First you have to click on "Get App Hash" button to get the app hash code and save it somewhere.
+        It will be needed when you send SMS. <br>
+        Once you have app hash code, You can click on "Start Wathching SMS" and send a SMS from your emulator.
+      </h1>
+
+      <h1>
+        SMS format should be:
+        <code>
+            <#> Your ExampleApp code is: 123456 YOUR_APP_HASH_CODE_HERE
+        </code>
+      </h1>
+
+      <br>
+      <ion-button block color="primary" (click)="getHashCode()">Get App Hash</ion-button>
+      <ion-button block color="secondary" (click)="getSMS()">Start Watching SMS</ion-button>
+      <br>
+      <ion-text color="primary">
+        <h1>{{appHashString}}</h1>
+      </ion-text>
+
+      <ion-text color="secondary">
+        <h1>{{smsTextmessage}}</h1>
+      </ion-text>
+
+    </ion-card-content>
+  </ion-card>
 </ion-content>
